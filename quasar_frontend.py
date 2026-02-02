@@ -1,4 +1,3 @@
-#!/usr/bin/env python3 74187418
 """quasar_frontend.py — interactive front-end that delegates crypto tasks to aes_cbc.py.
 
 This is a cleaned copy of the original `Quasar 1.0` front-end. It delegates
@@ -115,7 +114,7 @@ while running:
         +-------------------------------------------------------------------------+
         | Definition: Quasar is an encryption and decryption front-end.           |
         | This program delegates cryptographic operations to a separate module.   |
-        | Coded by: Walliam Chang, Alex Tangathan, and Chat GPT - 5.0 mini.       |
+        | Coded by: Walliam Chang and Alex Tangathan.                             |
         |                                                                         |
         | Commands:                                                               |
         |    help    - show this message                                          |
