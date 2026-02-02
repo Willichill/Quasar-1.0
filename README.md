@@ -1,4 +1,4 @@
-Quasar tools ##CLOSE ALL FILES OR PRESS CONTROLL S TO SAVE THE EDITED FILES!!!##
+Quasar tools
 ===========
 
 This workspace contains small educational utilities related to AES/CBC and a
