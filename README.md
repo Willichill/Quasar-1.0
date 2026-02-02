@@ -5,7 +5,7 @@ This workspace contains small educational utilities related to AES/CBC and a
 simple interactive front-end.
 
 Files of interest
-- `aes_cbc.py`         — educational AES-128 + CBC implementation and CLI (keep for testing/learning)
+- `aes_cbc.py`         — AES-128 + CBC implementation and CLI (keep for testing/learning)
 - `quasar_frontend.py` — interactive front-end (preferred name; replaces the old `Quasar 1.0`)
 - `quasar_keygen.py`   — key generation utility (preferred name; replaces the old `Quasar 1.1`)
 - `tests/`             — pytest tests for the AES/CBC implementation
@@ -37,33 +37,9 @@ Notes
   If you need the old filenames preserved for some reason, let me know and I can
   add small compatibility wrappers.
 
-Sharing this project — what to include
--------------------------------------
 
-- Source code: `aes_cbc.py`, `quasar_frontend.py`, `quasar_keygen.py`
-- Tests: the `tests/` directory (includes pytest tests that verify AES/CBC)
-- Dependency manifest: `requirements.txt` (used by CI to install `pytest`)
-- CI configuration: `.github/workflows/ci.yml` (optional, but useful)
-- README: this file with usage notes and the sharing checklist
-- Optional: a small `LICENSE` file if you want to specify reuse terms
-
-Packaging checklist (minimal)
-
-1. Copy the files listed above into a single folder.
-2. Run the tests locally to verify everything works:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-pytest -q
-```
-
-3. Optionally enable the GitHub Actions workflow by pushing the repository to
-   a GitHub repo (the `.github/workflows/ci.yml` file is included).
-
-Quick file summaries (one-liners)
---------------------------------
+Files
+-----
 - `aes_cbc.py` — Educational AES-128 implementation (encrypt/decrypt block
   primitives), PKCS#7 padding, CBC mode helpers, and a small file-level CLI
   (encrypt/decrypt files; prepend IV). Good for learning and tests; not
@@ -74,11 +50,6 @@ Quick file summaries (one-liners)
 - `quasar_frontend.py` — Interactive menu-driven front-end. Delegates
   encryption/decryption to `aes_cbc.py` and can invoke the key generator
   (if `quasar_keygen.py` is present).
-- `tests/` — Pytest tests verifying AES-128 ECB vector and CBC roundtrips,
-  padding edge cases, and file-roundtrip behavior.
-- `requirements.txt` — Minimal requirements for running tests (`pytest`).
-- `.github/workflows/ci.yml` — Optional CI workflow that runs `pytest` on
-  pushes and PRs.
 
 Important notes for sharing
 ---------------------------
@@ -156,17 +127,3 @@ Notes:
   the key as a hex string instead, `parse_key` accepts that too.
 - The encrypted file format is `IV || ciphertext` (IV = first 16 bytes).
 - Always keep `key.bin` secret and avoid committing it to VCS.
-
-⠀⠀⠀⠀⠀⢀⣤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⢤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢀⡼⠋⠀⣀⠄⡂⠍⣀⣒⣒⠂⠀⠬⠤⠤⠬⠍⠉⠝⠲⣄⡀⠀⠀
-⠀⠀⠀⢀⡾⠁⠀⠊⢔⠕⠈⣀⣀⡀⠈⠆⠀⠀⠀⡍⠁⠀⠁⢂⠀⠈⣷⠀⠀
-⠀⠀⣠⣾⠥⠀⠀⣠⢠⣞⣿⣿⣿⣉⠳⣄⠀⠀⣀⣤⣶⣶⣶⡄⠀⠀⣘⢦⡀
-⢀⡞⡍⣠⠞⢋⡛⠶⠤⣤⠴⠚⠀⠈⠙⠁⠀⠀⢹⡏⠁⠀⣀⣠⠤⢤⡕⠱⣷
-⠘⡇⠇⣯⠤⢾⡙⠲⢤⣀⡀⠤⠀⢲⡖⣂⣀⠀⠀⢙⣶⣄⠈⠉⣸⡄⠠⣠⡿
-⠀⠹⣜⡪⠀⠈⢷⣦⣬⣏⠉⠛⠲⣮⣧⣁⣀⣀⠶⠞⢁⣀⣨⢶⢿⣧⠉⡼⠁
-⠀⠀⠈⢷⡀⠀⠀⠳⣌⡟⠻⠷⣶⣧⣀⣀⣹⣉⣉⣿⣉⣉⣇⣼⣾⣿⠀⡇⠀
-⠀⠀⠀⠈⢳⡄⠀⠀⠘⠳⣄⡀⡼⠈⠉⠛⡿⠿⠿⡿⠿⣿⢿⣿⣿⡇⠀⡇⠀
-⠀⠀⠀⠀⠀⠙⢦⣕⠠⣒⠌⡙⠓⠶⠤⣤⣧⣀⣸⣇⣴⣧⠾⠾⠋⠀⠀⡇⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠙⠶⣭⣒⠩⠖⢠⣤⠄⠀⠀⠀⠀⠀⠠⠔⠁⡰⠀⣧⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠲⢤⣀⣀⠉⠉⠀⠀⠀⠀⠀⠁⠀⣠⠏⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠛⠒⠲⠶⠤⠴⠒⠚⠁
