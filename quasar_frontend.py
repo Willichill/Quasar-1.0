@@ -1,5 +1,5 @@
 #!/usr/bin/env python3 74187418
-"""quasar_frontend.py — interactive front-end that delegates crypto tasks.
+"""quasar_frontend.py — interactive front-end that delegates crypto tasks to aes_cbc.py.
 
 This is a cleaned copy of the original `Quasar 1.0` front-end. It delegates
 AES/CBC work to `aes_cbc.py` and key generation to `quasar_keygen.py` (if
