@@ -31,7 +31,7 @@ except Exception:
 
 
 boot = input("Hello, press any key to continue: ")
-
+# Oooooooooooooooooooohhhh Cool quasar textart I found online
 ascii_block = textwrap.dedent(r"""
 .......................................................................................:^?PBPY?!^
 ......::::..............:....^:......................................................::^?PBGJ!~^:
@@ -134,7 +134,7 @@ while running:
             "You got this!",
             "I believe in you!",
             "You do contribute to society!",
-            "Fransisco is a femboy.",
+            "You are loved!",
         ]
         print(random.choice(statements))
 
@@ -221,49 +221,6 @@ while running:
                 print(f"Self-test failed: {e}")
         else:
             print("Unknown option. Choose encrypt, decrypt, or selftest.")
-    
-    elif choice == "DEL":
-        base = os.path.dirname(__file__) or "."
-        targets = [
-            os.path.join(base, "quasar_frontend.py"),
-            os.path.join(base, "quasar_keygen.py"),
-            os.path.join(base, "aes_cbc.py"),
-            os.path.join(base, "README.md"),
-            os.path.join(base, "tests"),
-            os.path.join(base, "key.bin"),
-            os.path.join(base, "input.txt"),
-            os.path.join(base, "encrypt_output.bin"),
-            os.path.join(base, "output.txt"),
-        ]
-
-        print("This will delete (or skip if missing) the following files/directories:")
-        for t in targets:
-            print(" - ", t)
-        print()
-        confirm = input('Type DEL to confirm: ').strip()
-        if confirm != "DEL":
-            print("Canceled.")
-            continue
-
-        extra = input("Type PERMA to del perma targets, or press Enter to cancel: ").strip()
-        if extra != "PERMA":
-            print("Canceled.")
-            continue
-        for path in targets:
-            try:
-                if os.path.isdir(path):
-                    shutil.rmtree(path)
-                    print(f"Removed directory: {path}")
-                else:
-                    os.remove(path)
-                    print(f"Removed file: {path}")
-            except FileNotFoundError:
-                print(f"Not found (skipped): {path}")
-            except Exception as e:
-                print(f"Failed to remove {path}: {e}")
-
-        print("Kill complete.")
-        running = False
 
     elif choice == "keygen":
         if keygen_available:
